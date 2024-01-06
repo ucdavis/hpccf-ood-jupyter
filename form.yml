@@ -5,9 +5,12 @@ form:
   - bc_account
   - bc_queue
   - bc_num_hours
-  - bc_num_slots
   - bc_email_on_started
 
 attributes:
   modules: "slurm conda/base/latest"
   extra_jupyter_args: ""
+  bc_account:
+    help: "Enter group account name. i.e. adamgrp."
+  bc_queue:
+    help: "Enter slurm partition name. i.e. low, med, high, gpuh, etc."
