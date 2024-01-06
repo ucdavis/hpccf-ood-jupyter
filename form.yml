@@ -11,6 +11,6 @@ attributes:
   modules: "slurm conda/base/latest"
   extra_jupyter_args: ""
   bc_account:
-    help: "Enter group account name. i.e. adamgrp."
+    help: "Enter slurm group account name (i.e. adamgrp)."
   bc_queue:
-    help: "Enter slurm partition name. i.e. low, med, high, gpuh, etc."
+    help: "Enter slurm partition name (i.e. low, med, high, gpuh, etc)."
