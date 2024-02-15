@@ -10,7 +10,6 @@ form:
   - bc_email_on_started
 attributes:
   modules: "conda/base/latest"
-  extra_jupyter_args: ""
   auto_accounts:
     help: |
       Select the slurm group account (i.e adamgrp)
