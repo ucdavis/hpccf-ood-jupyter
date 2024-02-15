@@ -1,30 +1,32 @@
-#!/bin/bash
-
 # Benchmark info
 echo "TIMING - Starting main script at: $(date)"
 
-# Set working directory to home directory
-cd "${HOME}"
+setup_env() {
 
-#
-# Start Jupyter Notebook Server
-#
+  # Set working directory to home directory
+  cd "${HOME}"
 
-<%- unless context.modules.blank? -%>
-# Purge the module environment to avoid conflicts
-module purge
+  #
+  # Start Jupyter Notebook Server
+  #
 
-# Load the require modules
-module load <%= context.modules %>
-conda activate jupyterlab-4
+  <%- unless context.modules.blank? -%>
+  # Purge the module environment to avoid conflicts
+  module purge
 
-# List loaded modules
-module list
-<%- end -%>
+  # Load the require modules
+  module load <%= context.modules %>
+  conda activate jupyterlab-4
 
-# Benchmark info
-echo "TIMING - Starting jupyter at: $(date)"
+  # List loaded modules
+  module list
+  <%- end -%>
+}
+
+setup_env
 
 # Launch the Jupyter Notebook Server
 set -x
-jupyter notebook --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>
+jupyter
+
+#jupyter notebook --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>
