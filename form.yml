@@ -7,8 +7,10 @@ form:
   - cores
   - mem
   - bc_num_hours
+  - working_dir
   - extra_jupyter_args
   - bc_email_on_started
+
 attributes:
   modules: "conda/base/latest"
   extra_jupyter_args: "" 
@@ -38,3 +40,10 @@ attributes:
     max: 60
     help: |
       Your job will be automatically killed after this amount of time
+  working_dir:
+    label: "Working Directory"
+    data-filepicker: true
+    data-target-file-type: dirs  # Valid values are: files, dirs, or both
+    readonly: false
+    help: |
+      Select the directory wherein you want to work (defaults to $HOME)
