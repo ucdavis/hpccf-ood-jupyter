@@ -29,4 +29,4 @@ setup_env
 
 # Launch the Jupyter Notebook Server
 set -x
-jupyter notebook --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>
+jupyter lab --no-browser --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>
