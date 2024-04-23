@@ -36,6 +36,7 @@ c.NotebookApp.base_url = '/node/${host}/${port}/'
 c.NotebookApp.open_browser = False
 c.NotebookApp.allow_origin = '*'
 c.NotebookApp.disable_check_xsrf = True
+c.NotebookApp.terminado_settings = {'shell_command': ['/bin/bash']}
 c.NotebookApp.notebook_dir = "<%= working_dir.to_s %>"
 EOL
 )
