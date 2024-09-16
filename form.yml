@@ -20,8 +20,7 @@ attributes:
     widget: text_area
     label: "Additional Modules"
     help: |
-      If needed, enter any additional modules to be loaded separated by spaces (
-i.e cuda/11.7.1 nvhpc/23.1 )
+      If needed, enter any additional modules to be loaded separated by spaces (i.e cuda/11.7.1 nvhpc/23.1 )
   auto_accounts:
     help: |
       Select the slurm group account (i.e adamgrp)
