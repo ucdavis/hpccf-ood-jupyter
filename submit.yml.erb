@@ -3,11 +3,17 @@ batch_connect:
   template: "basic"
 script:
   native:
+    - "--export"
+    - "ALL"
     - "--cpus-per-task"
     - "<%= cores %>"
     - "--mem"
     - "<%= mem %>G"
     <%- if gpu_num.to_i > 0 -%>
-    - "--gres"
-    - "gpu:<%= gpu_num.to_s %>"
+    - "--gpus"
+    - "<%= "#{gpu_type}:" unless gpu_type.blank? %><%= gpu_num %>"
     <%- end -%>
+  job_environment:
+    PATH: /bin:/sbin:/usr/bin:/usr/sbin:/snap/bin:/opt/puppetlabs/bin
+    HOME: <%= ENV['HOME'].to_s %>
+    USER: <%= ENV['USER'].to_s %>
